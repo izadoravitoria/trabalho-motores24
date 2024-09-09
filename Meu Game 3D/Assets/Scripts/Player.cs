@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Chão")
+        if  ( !noChao && collision.gameObject.tag == "Chão")
         {
             noChao = true;
         }
@@ -36,11 +36,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && noChao == true)
         {
             rb.AddForce(Vector3.up * forcaPulo, ForceMode.Impulse);
+            noChao = false;
 
         }
         if (transform.position.y < -5)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+         }
     }
 }
