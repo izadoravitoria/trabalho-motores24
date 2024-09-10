@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Moeda : MonoBehaviour
 {
-    public int velocidadeGiro = 5;
+    public int velocidadeGiro = 50;
 
     private void OnTriggerEnter(Collider other)
     {
